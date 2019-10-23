@@ -21,9 +21,9 @@ class Preprocessor:
         if len(self.book_content) != 0:
             for character in self.book_content:
                 # clear out unwanted character only keep english character, number and required symbol
-                if character in string.ascii_letters  or \
+                if character in string.ascii_letters or \
                         character.isnumeric() or \
-                        character in ['-','_',' ',' '] or \
+                        character in ['-', '_', ' ', ' '] or \
                         character == '\n':
                     if character in ['-','_',' ']:
                         book_content_cleaned += ' '
@@ -36,7 +36,7 @@ class Preprocessor:
 
     # read the book content from file with utf 8 encoding
     def read_text(self, text_name):
-        file = open(text_name, 'r', encoding= 'utf-8')
+        file = open(text_name, 'r', encoding='utf-8')
         lines = file.readlines()
         for line in lines:
             self.book_content += line
